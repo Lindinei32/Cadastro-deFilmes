@@ -1,0 +1,75 @@
+<div class="row">
+
+  <div class="col-sm-6" *ngIf="filmeSelecionado">
+    <div class="row">
+      <div class="mr-auto">
+        <app-titulo [titulo]="'Filme Selecionado : ' + filmeSelecionado.id"></app-titulo>
+      </div>
+      <div class="mt-1">
+        <button class="btn btn-sm btn-outline-danger" (click)="voltar()" style="float: right;">Fechar</button>
+      </div>
+    </div>
+    <form [formGroup]="filmeForm" (submit)="filmeSubmit()">
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="form-label">Título</label>
+        <input type="text" formControlName="nome"  class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="form-label">Data de Lançamento</label>
+        <input type="text" formControlName="data"  class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="form-label">Gênero</label>
+        <input type="text" formControlName="genero" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" class="form-label">Diretor</label>
+        <input type="text" formControlName="diretor" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="form-label">Elenco</label>
+        <textarea class="form-control" rows="3" input type="text" formControlName="listaatores"  class="form-control">
+        </textarea>
+      </div>
+      <br>
+      <div class="form-group" >
+        <button class="btn btn-sm btn-success" [disabled]="!filmeForm.valid">SALVAR</button>
+      </div>
+    </form>
+  </div>
+
+  <div [ngClass]="{'col-sm-6': filmeSelecionado, 'col-sm-12': !filmeSelecionado}">
+    <app-titulo [titulo]="titulo"></app-titulo>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Visualizar</th>
+          <th scope="col">Título</th>
+          <th scope="col">Data Lançamento</th>
+          <th scope="col">Gênero</th>
+          <th scope="col">Diretor</th>
+          <th scope="col">Elenco</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let filme of filmes">
+          <td><button (click)="filmesSelected(filme)" class="btn btn-sm btn-outline-warning">Detalhe</button></td>
+          <td scope="row">{{filme.nome}}</td>
+          <td>{{filme.data}}</td>
+          <td>{{filme.genero}}</td>
+          <td>{{filme.diretor}}</td>
+          <td>{{filme.listaatores}}</td>
+          <td>
+            <div class="btn-group">
+
+              <button class="btn btn-sm btn-outline-primary" >Editar</button>
+              <button class="btn btn-sm btn-outline-danger" >Excluir</button>
+
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<div>

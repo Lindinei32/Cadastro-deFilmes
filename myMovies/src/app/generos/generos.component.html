@@ -1,0 +1,11 @@
+<app-titulo [titulo]="titulo"></app-titulo>
+
+<table class="table tsble-dark">
+  
+  <tbody>
+    <tr *ngFor="let genero of generos">
+      <th scope="row">{{genero.id}}</th>
+      <td>{{genero.nome}}</td>
+    </tr>
+  </tbody>
+</table>

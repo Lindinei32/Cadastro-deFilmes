@@ -1,0 +1,40 @@
+{
+    "cSpell.words": [
+        "Ação",
+        "ASPNETCORE",
+        "Atores",
+        "Aventura",
+        "Comédia",
+        "criar",
+        "Detalhe",
+        "diretor",
+        "Editar",
+        "Elenco",
+        "Excluir",
+        "Fechar",
+        "filme",
+        "Filmes",
+        "gênero",
+        "Generos",
+        "Gêneros",
+        "Lançamento",
+        "lista",
+        "listaatores",
+        "MEUS",
+        "Mostrar",
+        "Nenhum",
+        "Opções",
+        "painel",
+        "rigth",
+        "SALVAR",
+        "Selecionado",
+        "titulo",
+        "Título",
+        "Visualizar",
+        "Voltar"
+    ],
+    "vscode-janus-debug.uploadOnSave": [
+        "app.module",
+        "filmes.component"
+    ]
+}
